@@ -2,6 +2,7 @@
 import './App.css';
 import Navbar from './components/Navbar'
 import News from './components/News'
+import Home from './components/Home'
 import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
@@ -41,7 +42,8 @@ export default class App extends Component {
       <Router>
           <Navbar mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)} />
           <Routes>
-            <Route exact path="/" element={<News key="general" pageSize={8} country='in' category='general' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/" element={<Home/>} /> 
+            <Route exact path="/highlights" element={<News key="general" pageSize={8} country='in' category='general' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
             <Route exact path="/business" element={<News key="business" pageSize={8} country='in' category='business' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
             <Route exact path="/entertainment" element={<News key="entertainment" pageSize={8} country='in' category='entertainment' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
             <Route exact path="/general" element={<News key="general" pageSize={8} country='in' category='general' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
