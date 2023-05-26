@@ -1,32 +1,58 @@
 {
     "status": "ok",
-    "totalResults": 2,
+    "totalResults": 4,
     "articles": [
         {
             "source": {
-                "id": "espn-cric-info",
-                "name": "ESPN Cric Info"
+                "id": "al-jazeera-english",
+                "name": "Al Jazeera English"
             },
-            "author": null,
-            "title": "PCB hands Umar Akmal three-year ban from all cricket | ESPNcricinfo.com",
-            "description": "Penalty after the batsman pleaded guilty to not reporting corrupt approaches | ESPNcricinfo.com",
-            "url": "http://www.espncricinfo.com/story/_/id/29103103/pcb-hands-umar-akmal-three-year-ban-all-cricket",
-            "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1099495_800x450.jpg",
-            "publishedAt": "2020-04-27T11:41:47Z",
-            "content": "Umar Akmal's troubled cricket career has hit its biggest roadblock yet, with the PCB handing him a ban from all representative cricket for three years after he pleaded guilty of failing to report det… [+1506 chars]"
+            "author": "Lucia Newman",
+            "title": "Puerto Williams: A journey to the end of the world",
+            "description": "The globe’s southernmost town is hoping to become a hub for biocultural and environmental education.",
+            "url": "http://www.aljazeera.com/news/2023/5/25/puerto-williams-a-journey-to-the-end-of-the-world",
+            "urlToImage": "https://www.aljazeera.com/wp-content/uploads/2023/05/IMG_4510-1684949489.jpg?resize=1920%2C1134",
+            "publishedAt": "2023-05-25T14:27:53Z",
+            "content": "With the exception of a couple of nearby Chilean islands with just a handful of people, the southernmost populated town on our planet is Puerto Williams, Chile. It is located on the island of Navarin… [+8203 chars]"
         },
         {
             "source": {
-                "id": "espn-cric-info",
-                "name": "ESPN Cric Info"
+                "id": "usa-today",
+                "name": "USA Today"
             },
             "author": null,
-            "title": "What we learned from watching the 1992 World Cup final in full again | ESPNcricinfo.com",
-            "description": "Wides, lbw calls, swing - plenty of things were different in white-ball cricket back then | ESPNcricinfo.com",
-            "url": "http://www.espncricinfo.com/story/_/id/28970907/learned-watching-1992-world-cup-final-full-again",
-            "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg",
-            "publishedAt": "2020-03-30T15:26:05Z",
-            "content": "Last week, we at ESPNcricinfo did something we have been thinking of doing for eight years now: pretend-live ball-by-ball commentary for a classic cricket match. We knew the result, yes, but we tried… [+6823 chars]"
+            "title": "Higher education fled this American small town. It left behind 'a ghost town.'",
+            "description": "Small towns across America grow to count on the colleges and universities in their communities. But when schools choose to leave, what's left behind?",
+            "url": "https://www.usatoday.com/story/news/education/2023/05/25/wvu-higher-education-montgomery-west-viriginia-impact/70243287007/",
+            "urlToImage": "https://www.gannett-cdn.com/presto/2023/05/24/USAT/3d023cf2-0f10-41c7-b1a6-2eaeee39fbd1-Greg_Ingram_football_field.png?auto=webp&crop=719,405,x0,y66&format=pjpg&width=1200",
+            "publishedAt": "2023-05-25T11:02:44+00:00",
+            "content": "MONTGOMERY, West Virginia When West Virginia University took the local campus out of Montgomery five years ago, it took more from the rural town than just a college.\r\nSuddenly, 1,500 students were go… [+11688 chars]"
+        },
+        {
+            "source": {
+                "id": "australian-financial-review",
+                "name": "Australian Financial Review"
+            },
+            "author": "Julie Hare",
+            "title": "Aged care visa changes ‘ripe for rorting’",
+            "description": "Visa changes designed to boost the aged care work force could trigger a new wave of dodgy courses and low-quality students, say immigration and education experts.",
+            "url": "http://www.afr.com/politics/federal/aged-care-visa-changes-ripe-for-rorting-20230525-p5db9w",
+            "urlToImage": "https://static.ffx.io/images/$zoom_1.0605%2C$multiply_1%2C$ratio_1.777778%2C$width_1059%2C$x_0%2C$y_0/t_crop_custom/c_scale%2Cw_800%2Cq_88%2Cf_jpg/t_afr_no_label_no_age_social_wm/fc81fad94e107b249dfdd5b6f78a85a09a81a44b",
+            "publishedAt": "2023-05-25T08:11:32Z",
+            "content": "An international student doing a university degree would take three years to do the course, then would need a temporary graduate visa, get relevant work experience, then go on a temporary entry visa … [+3224 chars]"
+        },
+        {
+            "source": {
+                "id": "newsweek",
+                "name": "Newsweek"
+            },
+            "author": "Kaitlin Lewis",
+            "title": "Transgender Student Questions Glenn Youngkin on Restrooms",
+            "description": "The Virginia governor appeared at a CNN town hall Thursday to discuss his state's proposed educational policies, including those for LGBT students.",
+            "url": "https://www.newsweek.com/transgender-student-questions-glenn-youngkin-restrooms-1786812",
+            "urlToImage": "https://d.newsweek.com/en/full/2206956/youngkin-pressed-lgbtq-school-policies.jpg",
+            "publishedAt": "2023-03-10T05:46:23Z",
+            "content": "Virginia Governor Glenn Youngkin faced questions about his state's LGBT guidelines for public education from a transgender student from Arlington during a CNN town hall Thursday.\r\nAccording to Virgin… [+4792 chars]"
         }
     ]
 }
