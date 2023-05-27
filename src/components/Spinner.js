@@ -10,14 +10,14 @@ defineElement(lottie.loadAnimation);
 export class Spinner extends Component {
   render() {
     return (
-      <div className='text-center'>
+      <div className='text-center my-3'>
         <lord-icon
           src="https://cdn.lordicon.com/ulhdumaq.json"
           trigger="loop"
           colors="primary:#121331,secondary:#08a88a"
-          style={{width:'150px',height:'150px'}}>
+          style={{width:'100px',height:'100px'}}>
         </lord-icon>
-        <h1>Loading</h1>
+        <h4>Loading</h4>
       </div>
     )
   }

@@ -9,7 +9,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-
+import LoadingBar from 'react-top-loading-bar'
 
 
 
@@ -19,7 +19,8 @@ export default class App extends Component {
     super();
     this.state = {
       mode:'light',
-      modeReverse:'dark'
+      modeReverse:'dark',
+      progress:0,
     }
   }
 
@@ -36,21 +37,32 @@ export default class App extends Component {
     }
   }
 
+
+  setProgress = (progress) =>{
+    this.setState({progress:progress});
+  }
+
   render() {
     return (
       <div>
       <Router>
           <Navbar mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)} />
+          <LoadingBar
+            height={3}
+            color='blue'
+            progress={this.state.progress}
+            // onLoaderFinished={() => setProgress(0)}
+          />
           <Routes>
             <Route exact path="/" element={<Home/>} /> 
-            <Route exact path="/highlights" element={<News key="general" pageSize={8} country='in' category='general' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
-            <Route exact path="/business" element={<News key="business" pageSize={8} country='in' category='business' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
-            <Route exact path="/entertainment" element={<News key="entertainment" pageSize={8} country='in' category='entertainment' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
-            <Route exact path="/general" element={<News key="general" pageSize={8} country='in' category='general' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
-            <Route exact path="/health" element={<News key="health" pageSize={8} country='in' category='health' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
-            <Route exact path="/science" element={<News key="science" pageSize={8} country='in' category='science' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
-            <Route exact path="/sports" element={<News key="sports" pageSize={8} country='in' category='sports' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/> }/>
-            <Route exact path="/technology" element={<News key="technology" pageSize={8} country='in' category='technology' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} />
+            <Route exact path="/highlights" element={<News setProgress={this.setProgress} key="general" pageSize={8} country='in' category='general' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/business" element={<News setProgress={this.setProgress} key="business" pageSize={8} country='in' category='business' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/entertainment" element={<News setProgress={this.setProgress} key="entertainment" pageSize={8} country='in' category='entertainment' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/general" element={<News setProgress={this.setProgress} key="general" pageSize={8} country='in' category='general' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/health" element={<News setProgress={this.setProgress} key="health" pageSize={8} country='in' category='health' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/science" element={<News setProgress={this.setProgress} key="science" pageSize={8} country='in' category='science' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/sports" element={<News setProgress={this.setProgress} key="sports" pageSize={8} country='in' category='sports' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/> }/>
+            <Route exact path="/technology" element={<News setProgress={this.setProgress} key="technology" pageSize={8} country='in' category='technology' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} />
           </Routes>
       </Router>
       
