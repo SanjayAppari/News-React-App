@@ -1,14 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import lottie from 'lottie-web';
 import { defineElement } from 'lord-icon-element';
-
-// define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
 
 
-
-export class Spinner extends Component {
-  render() {
+const Spinner = ()=> {
     return (
       <div className='text-center my-3'>
         <lord-icon
@@ -20,7 +16,6 @@ export class Spinner extends Component {
         <h4>Loading</h4>
       </div>
     )
-  }
 }
 
 export default Spinner

@@ -1,14 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
   Link,
 } from "react-router-dom";
 
-export class Home extends Component {
-  constructor(props){
-    super(props);
-    document.title = "Home - NewsApp  "
-  }
-  render() {
+const Home =()=>{
+    document.title = "Home - NewsApp  ";
     return (
       <div className='container home'>
         <div className="main-home">
@@ -18,7 +14,6 @@ export class Home extends Component {
         </div>
       </div>
     )
-  }
 }
 
 export default Home
