@@ -1,10 +1,8 @@
-
-import React, {useState} from 'react'
-
 import './App.css';
 import Navbar from './components/Navbar'
 import News from './components/News'
 import Home from './components/Home'
+import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,62 +12,63 @@ import LoadingBar from 'react-top-loading-bar'
 
 
 
-const App = ()=>{
+export default class App extends Component {
 
-  const apiKey = process.env.REACT_APP_API_KEY;
+  apiKey = process.env.REACT_APP_API_KEY
 
-  const [mode,setMode] = useState('light');
-  const [modeReverse,setModeReverse] = useState('dark');
-  const [progress,setProgress] = useState(0);
+  constructor(){
+    super();
+    this.state = {
+      mode:'light',
+      modeReverse:'dark',
+      progress:0,
+    }
+  }
 
   
-  const handleMode = ()=>{
-    if(mode === 'dark'){
-       setMode('light');
-       setModeReverse('dark');
+  handleMode(){
+    if(this.state.mode === 'dark'){
+       this.setState({mode:'light', modeReverse:'dark'});
        document.body.style.backgroundColor = "white";
        document.body.style.color = "black";
     }
     else{
-       setMode('dark');
-       setModeReverse('light');
+      this.setState({mode:'dark', modeReverse:'light'});
        document.body.style.backgroundColor = "#202020";
        document.body.style.color = "white";
     }
   }
 
 
-  const setProgressFun = (progressValue) =>{
-    setProgress(progressValue)
+  setProgress = (progress) =>{
+    this.setState({progress:progress});
   }
 
+  render() {
     return (
       <div>
       <Router>
-          <Navbar mode={mode} modeReverse={modeReverse} handleMode={handleMode} />
+          <Navbar mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)} />
           <LoadingBar
             height={3}
             color='blue'
-            progress={progress}
+            progress={this.state.progress}
             // onLoaderFinished={() => setProgress(0)}
           />
           <Routes>
             <Route exact path="/" element={<Home/>} /> 
-            <Route exact path="/highlights" element={<News setProgressFun={setProgressFun}  apiKey={apiKey} key="general" pageSize={8} country='in' category='general' mode={mode} modeReverse={modeReverse} handleMode={handleMode}/>} /> 
-            <Route exact path="/business" element={<News setProgressFun={setProgressFun}  apiKey={apiKey} key="business" pageSize={8} country='in' category='business' mode={mode} modeReverse={modeReverse} handleMode={handleMode}/>} /> 
-            <Route exact path="/entertainment" element={<News setProgressFun={setProgressFun}  apiKey={apiKey} key="entertainment" pageSize={8} country='in' category='entertainment' mode={mode} modeReverse={modeReverse} handleMode={handleMode}/>} /> 
-            <Route exact path="/general" element={<News setProgressFun={setProgressFun}  apiKey={apiKey} key="general" pageSize={8} country='in' category='general' mode={mode} modeReverse={modeReverse} handleMode={handleMode}/>} /> 
-            <Route exact path="/health" element={<News setProgressFun={setProgressFun}  apiKey={apiKey} key="health" pageSize={8} country='in' category='health' mode={mode} modeReverse={modeReverse} handleMode={handleMode}/>} /> 
-            <Route exact path="/science" element={<News setProgressFun={setProgressFun}  apiKey={apiKey} key="science" pageSize={8} country='in' category='science' mode={mode} modeReverse={modeReverse} handleMode={handleMode}/>} /> 
-            <Route exact path="/sports" element={<News setProgressFun={setProgressFun}  apiKey={apiKey} key="sports" pageSize={8} country='in' category='sports' mode={mode} modeReverse={modeReverse} handleMode={handleMode}/> }/>
-            <Route exact path="/technology" element={<News setProgressFun={setProgressFun}  apiKey={apiKey} key="technology" pageSize={8} country='in' category='technology' mode={mode} modeReverse={modeReverse} handleMode={handleMode}/>} />
+            <Route exact path="/highlights" element={<News setProgress={this.setProgress}  apiKey={this.apiKey} key="general" pageSize={8} country='in' category='general' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/business" element={<News setProgress={this.setProgress}  apiKey={this.apiKey} key="business" pageSize={8} country='in' category='business' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/entertainment" element={<News setProgress={this.setProgress}  apiKey={this.apiKey} key="entertainment" pageSize={8} country='in' category='entertainment' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/general" element={<News setProgress={this.setProgress}  apiKey={this.apiKey} key="general" pageSize={8} country='in' category='general' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/health" element={<News setProgress={this.setProgress}  apiKey={this.apiKey} key="health" pageSize={8} country='in' category='health' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/science" element={<News setProgress={this.setProgress}  apiKey={this.apiKey} key="science" pageSize={8} country='in' category='science' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} /> 
+            <Route exact path="/sports" element={<News setProgress={this.setProgress}  apiKey={this.apiKey} key="sports" pageSize={8} country='in' category='sports' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/> }/>
+            <Route exact path="/technology" element={<News setProgress={this.setProgress}  apiKey={this.apiKey} key="technology" pageSize={8} country='in' category='technology' mode={this.state.mode} modeReverse={this.state.modeReverse} handleMode={this.handleMode.bind(this)}/>} />
           </Routes>
       </Router>
       
       </div>
     )
-  
+  }
 }
-
-
-export default App
